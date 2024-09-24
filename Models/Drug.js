@@ -5,33 +5,8 @@ export class Drug {
         this.benefit = benefit;
     }
 
-    updateExpiresIn() {
-        if (this.name != "Magic Pill")
-        {
-            this.expiresIn--;
-        }
-    }
-
-    updateBenefit() {
-        if (this.name == "Magic Pill")
-        {
-            return;
-        }
-        if (this.name == "Herbal Tea")
-        {
-            this.increaseBenefit();
-        }
-        else if (this.name == "Fervex") {
-            if (this.expiresIn > 0) {
-                this.increaseBenefit();
-            } else {
-                this.benefit = 0;
-            }
-        }
-        else
-        {
-            this.decreaseBenefit();
-        }
+    decreaseExpiresIn() {
+        this.expiresIn--;
     }
 
     decreaseBenefit() {
@@ -41,11 +16,21 @@ export class Drug {
         }
         if (this.expiresIn > 0)
         {
-            this.benefit -= 1;
+            if (this.name === "Dafalgan")
+            {
+                this.benefit -= 2;
+            }
+            else
+            {
+                this.benefit -= 1;
+            }
         }
-        else
-        {
-            this.benefit -= 2;
+        else {
+            if (this.name === "Dafalgan") {
+                this.benefit -= 4;
+            } else {
+                this.benefit -= 2;
+            }
         }
     }
 
