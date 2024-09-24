@@ -1,5 +1,5 @@
-import { Drug } from "./Models/Drug";
-import { Pharmacy } from "./Models/Pharmacy";
+import { Drug } from "./Models/Drug.js";
+import { Pharmacy } from "./Models/Pharmacy.js";
 
 describe("Pharmacy", () => {
   it("should decrease the benefit and expiresIn", () => {
