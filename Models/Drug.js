@@ -26,6 +26,9 @@ export class Drug {
         this.benefit -= 2;
       }
     }
+    if (this.benefit < 0) {
+      this.benefit = 0;
+    }
   }
 
   increaseBenefit() {
